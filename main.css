@@ -1,3 +1,46 @@
 body {
-    background-color: firebrick;
-  }
+  background-color: pink;
+}
+/* navigation */
+.tonav {
+  background-color: rgba(252, 113, 108, 255);
+  border: none;
+  border-radius: 70px;
+  color: rgb(56, 7, 7);
+  padding: 35px 52px;
+  text-align: center;
+  display: -ms-inline-grid;
+  font-size: 26px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 20px;
+  outline: none;
+  font-family: "Sour Gummy", sans-serif;
+  font-weight: bold;
+}
+.tonav:focus {
+  outline: none;
+}
+.buttonnav {
+  text-align: center;
+}
+/* logo */
+.title {
+  height: 300px;
+}
+.logo {
+  width: 350px;
+  height: 300px;
+}
+.logobox {
+  justify-content: space-between;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  width: 50%;
+  margin-right: 5px;
+  padding: 300 400;
+}
+
+/*popup*/
+
