@@ -12,3 +12,33 @@ function popup() {
         }
     });
 }
+let count;
+
+function addTime(minutes){
+    const min = document.getElementById("min");
+    const sec = document.getElementById("sec");
+
+    let total = minutes * 60; //total of seconds 
+
+    clearInterval(count); //empties for next 
+    min.textContent = "00";
+    sec.textContent = "00";
+
+    countdown = setInterval(()=>{ //if we are at end of timer
+        if(total <= 0){
+        clearInterval(countdown); 
+        alert("ringring");
+        return;
+        }
+
+        total--; //countdown
+
+        const curMin = Math.floor(total/60); //gets the minutes and rounds down 
+        const curSec = total%60; //gets the seconds without counting hours
+
+        min.textContent = String(curMin).padStart(2, '0');
+        sec.textContent = String(curSec).padStart(2, '0');
+    }, 1000);
+    
+
+}

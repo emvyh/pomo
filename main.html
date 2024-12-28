@@ -29,26 +29,47 @@
     <header class="buttonnav">
         <h2 class="poplink" id="poplink" onclick="popup()">what is pomodoro?</h2>
       <nav>
-        <a href="">
-          <button class="tonav">pomodoro</button>
-        </a>
-        <a href="">
-          <button class="tonav">short break</button>
-        </a>
-        <a href="">
-          <button class="tonav">long break</button>
-        </a>
-        <a href="">
-          <button class="tonav">custom</button>
-        </a>
-        <a href="">
-          <button class="tonav">loop</button>
+          <button type="button" class="tonav" onclick="addTime(25) ">pomodoro</button>
+
+          <button type="button" class="tonav" onclick="addTime(5)">short break</button>
+          
+          <button type="button" class="tonav" onclick="addTime(15)">long break</button>
+
+          <button type="button" class="tonav" onclick="custom()">custom</button>
+  
+          <button type="button" class="tonav">loop</button>
         </a>
       </nav>
     </header>
+
+    <!--customer timer amount -->
+    <div class="custom">
+      <h2>enter the custom amount of minutes!</h2>
+      <h3>our timers can only do 60 minutes or less.</h3>
+      <input type="text" placeholder="custom time here">
+    </div>
+
+    <!--control-->
+    <div class="control">
+      <img type = "button" src="loop.png" class="loop" onclick="loop()">
+      <img type = "button" src="play.png" class="play" onclick="start()">
+      <img type = "button" src="pause.png" class="pause" onclick="pause()">
+    </div>
+    
     <!--tomato and timer-->
-    <h1 class="time"></h1>
-    <img class="tom" src="tomatos.png">
+    <div class="timer">
+      <h1 class="min">
+        <span id="min">00</span>
+      </h1>
+
+      <h1 class="min">:</h1>
+
+      <h1 class="min">
+        <span id="sec">00</span>
+      </h1>
+    </div>
+    <img class="min" src="tomatos.png">
+
 
     <!--popup-->
     <div id="pop" class="popup">
@@ -72,6 +93,9 @@
             <li>After it ends, take a 5 minute break</li>
             <li>Repeat this process 5 more times but instead of a 5 minute break, 
                 take a 15 minute break</li>
+            <li>
+              Note! Our timers only support up to 60 minutes.
+            </li>
         </ul>
       </p>
       
