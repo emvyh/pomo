@@ -12,6 +12,17 @@ function popup() {
         }
     });
 }
+function custom(){
+    const custom = document.getElementById("custom");
+    const customlink = document.getElementById("customlink");
+
+    customlink.addEventListener("click", function() {
+        custom.style.display = "block"; // Show the custom popup
+    });
+    close.addEventListener("click", function() {
+        custom.style.display = "none"; // Hide the custom popup
+    });
+}
 let count;
 
 function addTime(minutes){
