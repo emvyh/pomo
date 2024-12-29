@@ -1,57 +1,59 @@
-
 function popup() {
-    const pop = document.getElementById("pop");
-    const head = document.getElementById("poplink");
+  const pop = document.getElementById("pop");
+  const head = document.getElementById("poplink");
 
-    head.addEventListener("click", function() {   
-            pop.style.display = "block"; // Show the popup
-    });
-    document.addEventListener("click", function(event) {
-        if (!pop.contains(event.target) && event.target !== head) {
-            pop.style.display = "none"; // Hide the popup if click is outside the popup
-        }
-    });
+  pop.style.display = "block"; //show the popup when clicked first time
+
+  head.addEventListener("click", function () {
+    pop.style.display = "block"; // Show the popup
+  });
+  document.addEventListener("click", function (event) {
+    if (!pop.contains(event.target) && event.target !== head) {
+      pop.style.display = "none"; // Hide the popup if click is outside the popup
+    }
+  });
 }
-function custom(){
-    const custom = document.getElementById("custom");
-    const customlink = document.getElementById("custom link");
+function custom() {
+  const custom = document.getElementById("custom");
+  const customlink = document.getElementById("custom link");
 
-    customlink.addEventListener("click", function() {
-        custom.style.display = "block"; // Show the custom popup
-    });
-    document.addEventListener("click", function(event) {
-        if (!custom.contains(event.target) && event.target !== customlink) {
-            custom.style.display = "none"; // Hide the popup if click is outside the popup
-        }
-    });
+  custom.style.display = "block"; // Show the popup when clicked first time
+
+  customlink.addEventListener("click", function () {
+    custom.style.display = "block"; // Show the custom popup
+  });
+  document.addEventListener("click", function (event) {
+    if (!custom.contains(event.target) && event.target !== customlink) {
+      custom.style.display = "none"; // Hide the popup if click is outside the popup
+    }
+  });
 }
 let count;
 
-function addTime(minutes){
-    const min = document.getElementById("min");
-    const sec = document.getElementById("sec");
+function addTime(minutes) {
+  const min = document.getElementById("min");
+  const sec = document.getElementById("sec");
 
-    let total = minutes * 60; //total of seconds 
+  let total = minutes * 60; //total of seconds
 
-    clearInterval(count); //empties for next 
-    min.textContent = "00";
-    sec.textContent = "00";
+  clearInterval(count); //empties for next
+  min.textContent = "00";
+  sec.textContent = "00";
 
-    countdown = setInterval(()=>{ //if we are at end of timer
-        if(total <= 0){
-        clearInterval(countdown); 
-        alert("ringring");
-        return;
-        }
+  countdown = setInterval(() => {
+    //if we are at end of timer
+    if (total <= 0) {
+      clearInterval(countdown);
+      alert("ringring");
+      return;
+    }
 
-        total--; //countdown
+    total--; //countdown
 
-        const curMin = Math.floor(total/60); //gets the minutes and rounds down 
-        const curSec = total%60; //gets the seconds without counting hours
+    const curMin = Math.floor(total / 60); //gets the minutes and rounds down
+    const curSec = total % 60; //gets the seconds without counting hours
 
-        min.textContent = String(curMin).padStart(2, '0');
-        sec.textContent = String(curSec).padStart(2, '0');
-    }, 1000);
-    
-
+    min.textContent = String(curMin).padStart(2, "0");
+    sec.textContent = String(curSec).padStart(2, "0");
+  }, 1000);
 }
