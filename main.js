@@ -14,13 +14,15 @@ function popup() {
 }
 function custom(){
     const custom = document.getElementById("custom");
-    const customlink = document.getElementById("customlink");
+    const customlink = document.getElementById("custom link");
 
     customlink.addEventListener("click", function() {
         custom.style.display = "block"; // Show the custom popup
     });
-    close.addEventListener("click", function() {
-        custom.style.display = "none"; // Hide the custom popup
+    document.addEventListener("click", function(event) {
+        if (!custom.contains(event.target) && event.target !== customlink) {
+            custom.style.display = "none"; // Hide the popup if click is outside the popup
+        }
     });
 }
 let count;
