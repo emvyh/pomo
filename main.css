@@ -18,8 +18,10 @@ body {
   font-family: "Sour Gummy", sans-serif;
   font-weight: bold;
 }
+
 .tonav:focus {
   outline: none;
+  opacity: 80%;
 }
 .buttonnav {
   text-align: center;
@@ -59,23 +61,26 @@ body {
   opacity: 80%;
 }
 .popup {
-  position: fixed;
-  align-items: center;
-  top: 110px;
-  left: 20%;
   width: 60%;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
-  background-color: mistyrose;
-  padding: 35px;
-  border-radius: 20px;
+  top: 110px;
+  position: absolute;
   display: none;
+  border-radius: 20px;
   font-size: 20px;
+  left: 20%;
+  background-color: mistyrose;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 /*custom time*/
-.custom{
+.custom {
   position: fixed;
   left: 23%;
+  top: 110px;
   text-align: center;
   display: none;
   align-items: center;
@@ -86,4 +91,49 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 35px;
   border-radius: 20px;
+}
+.text {
+  outline: none;
+  border: none;
+  width: 100px;
+  padding: 15px 20px;
+  border-radius: 20px;
+  background-color: rgba(252, 113, 108, 255);
+  color: rgb(56, 7, 7);
+  font-size: 20px;
+  font-weight: bolder;
+}
+.text::placeholder{
+  color: rgb(65, 23, 23);;
+  text-align:center;
+  font-family: "Sour Gummy", sans-serif;
+}
+/*control center*/
+.loop{
+  padding: 15px;
+  width: 6%;
+}
+.play{
+  padding: 15px;
+  width: 5%;
+}
+.pause{
+  padding: 15px;
+  width: 5%;
+}
+.control{
+  display: -ms-inline-grid;
+  cursor: pointer;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  padding: 10px;
+}
+/*time*/
+.timer{
+  display: -ms-inline-grid;
+  position: relative;
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
 }
