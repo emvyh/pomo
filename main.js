@@ -46,7 +46,19 @@ function addTime(minutes) {
   min.textContent = String(curMin).padStart(2, "0")
   sec.textContent = String(curSec).padStart(2, "0");
 }
-
+function tomatosub(){
+  const custom = document.getElementById("custom");
+  const time = document.getElementById("input").value;
+  var value = parseFloat(time);
+  if (isNaN(value) || value < 0 || value > 60) {
+    alert("Please enter a valid number of minutes between 0 and 60");
+    return;
+  }
+  else{
+    addTime(time);
+    custom.style.display = "none";
+  }
+}
 function start(){
   const min = document.getElementById("min");
   const sec = document.getElementById("sec");
