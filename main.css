@@ -31,22 +31,20 @@ body {
 }
 /* logo */
 .title {
-  width: 30%;
+  margin-top: -35px;
+  height: auto;
+  max-width: 400px;
 }
 .logo {
   height: 150px;
-  width: auto;
-  margin-top: -20px;
 }
 .logobox {
-  justify-content: space-between;
-  display: inline;
-  box-sizing: border-box;
-  align-items: center;
+  display: flex;
   width: 100%;
-  margin-right: 20px;
-  padding: 100px;
   border: none;
+  position: flex;
+  margin-left: -20px;
+  margin-bottom: -100px;
 }
 /*tomatoes*/
 .tom {
@@ -61,6 +59,7 @@ body {
   cursor: pointer;
   font-size: 30px;
   color: rgb(56, 7, 7);
+  margin-top: -60px;
 }
 .poplink:hover {
   opacity: 80%;
@@ -77,6 +76,7 @@ body {
   left: 20%;
   background-color: mistyrose;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 99;
 }
 
 /*custom time*/
@@ -94,6 +94,7 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 35px;
   border-radius: 20px;
+  z-index: 9;
 }
 .text {
   outline: none;
@@ -106,75 +107,69 @@ body {
   font-size: 20px;
   font-weight: bolder;
   display: inline;
-  margin-left: 20%;
+  z-index: 99;
 }
-.text::placeholder{
-  color: rgb(65, 23, 23);;
-  text-align:center;
+.text::placeholder {
+  color: rgb(65, 23, 23);
+  text-align: center;
   font-family: "Sour Gummy", sans-serif;
 }
 #input {
-  color: rgb(65, 23, 23);;
-  text-align:center;
+  color: rgb(65, 23, 23);
+  text-align: center;
   font-family: "Sour Gummy", sans-serif;
 }
-.tomatbut{
-  margin-top: -20px;
-  width: 20%;;
-  display: fixed;
-  position: relative;
+.tomatbut {
+  width: 50px;
+  height: 50px;
   cursor: pointer;
+  position: absolute; /* Enables precise placement */
+  top: 65%; /* Center vertically */
+  left: 60%;
 }
-.cap{
-position: absolute;
-left: 62%;
-top: 55%;
-color: rgb(65, 23, 23);;
-text-align:center;
-font-family: "Sour Gummy", sans-serif;
-cursor: pointer;
+.cap {
+  position: absolute;
+  top: 75%;
+  left: 59%;
+  color: rgb(65, 23, 23);
+  text-align: center;
+  font-family: "Sour Gummy", sans-serif;
+  cursor: pointer;
 }
 /*control center*/
-.loop{
-  padding: 15px;
-  width: 50px;
-}
-.loop:hover{
-  transform: scale(1.2);
-}
-.play{
-  padding: 15px;
-  width: 50px;
-}
-.play:hover{
-  transform: scale(1.2);
-}
-.pause{
-  padding: 15px;
-  width: 50px;
-}
-.pause:hover{
-  transform: scale(1.2);
-}
-.control{
-  display: -ms-inline-grid;
-  cursor: pointer;
-  margin: 0 auto;
-  position: flex;
+.control {
+  padding: 20px;
+  gap: 20px;
+  position: relative;
+  align-items: center;
   text-align: center;
-  padding: 60px;
+  z-index: 1;
+}
+.redo,
+.play,
+.pause {
+  padding: 15px;
+  width: 50px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+.redo:hover,
+.play:hover,
+.pause:hover {
+  transform: scale(1.2);
 }
 /*time*/
-.timer{
+.timer {
   text-align: center;
   padding: 10px;
   font-size: 50px;
   font-family: "Sour Gummy", sans-serif;
-  font-weight:lighter;
+  font-weight: lighter;
   display: flex;
   justify-content: center;
   margin-top: -120px;
-  color: rgb(65, 23, 23);;
+  color: rgb(65, 23, 23);
 }
 /*tomatoes*/
 .tomato {
@@ -182,7 +177,7 @@ cursor: pointer;
   width: 50%;
   margin-top: -150px;
 }
-.middle{
+.middle {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -199,7 +194,7 @@ cursor: pointer;
   color: rgb(56, 7, 7);
   position: absolute;
 }
-.para{
+.para {
   text-align: left;
   padding: 15px;
   font-size: 15px;
