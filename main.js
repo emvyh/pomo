@@ -1,3 +1,4 @@
+//what is pomodoro timer?
 function popup() {
   const pop = document.getElementById("pop");
   const head = document.getElementById("poplink");
@@ -13,6 +14,8 @@ function popup() {
     }
   });
 }
+//custom time popup
+
 function custom() {
   const custom = document.getElementById("custom");
   const customlink = document.getElementById("custom link");
@@ -29,11 +32,22 @@ function custom() {
   });
 }
 
-
-
+//add time to the timer
 let count;
 
 function addTime(minutes) {
+  const min = document.getElementById("min");
+  const sec = document.getElementById("sec");
+
+  let total = minutes * 60; //total of seconds
+  const curMin = Math.floor(total / 60); 
+  const curSec = total % 60;
+  
+  min.textContent = String(curMin).padStart(2, "0")
+  sec.textContent = String(curSec).padStart(2, "0");
+}
+
+function start(){
   const min = document.getElementById("min");
   const sec = document.getElementById("sec");
 
@@ -59,13 +73,6 @@ function addTime(minutes) {
     min.textContent = String(curMin).padStart(2, "0");
     sec.textContent = String(curSec).padStart(2, "0");
   }, 1000);
-}
-
-function start(){
-  const min = document.getElementById("min");
-  const sec = document.getElementById("sec");
-
-  let total = minutes * 60; //total of seconds
 }
 
 function pause(){
