@@ -17,10 +17,10 @@ function custom() {
   const custom = document.getElementById("custom");
   const customlink = document.getElementById("custom link");
 
-  custom.style.display = "block"; // Show the popup when clicked first time
+  custom.style.display = "inline"; // Show the popup when clicked first time
 
   customlink.addEventListener("click", function () {
-    custom.style.display = "block"; // Show the custom popup
+    custom.style.display = "inline"; // Show the custom popup
   });
   document.addEventListener("click", function (event) {
     if (!custom.contains(event.target) && event.target !== customlink) {
@@ -28,6 +28,9 @@ function custom() {
     }
   });
 }
+
+
+
 let count;
 
 function addTime(minutes) {
@@ -57,3 +60,19 @@ function addTime(minutes) {
     sec.textContent = String(curSec).padStart(2, "0");
   }, 1000);
 }
+
+function start(){
+  const min = document.getElementById("min");
+  const sec = document.getElementById("sec");
+
+  let total = minutes * 60; //total of seconds
+}
+
+function pause(){
+
+}
+function redo(){
+
+}
+
+
