@@ -34,64 +34,75 @@ function custom() {
 
 //add time to the timer
 let count;
+let amount = 0;
+let timeLeft = 0;
+let paused = false;
+let ogTime = 0;
 
 function addTime(minutes) {
   const min = document.getElementById("min");
   const sec = document.getElementById("sec");
 
   let total = minutes * 60; //total of seconds
-  const curMin = Math.floor(total / 60); 
+  const curMin = Math.floor(total / 60);
   const curSec = total % 60;
-  
-  min.textContent = String(curMin).padStart(2, "0")
+
+  min.textContent = String(curMin).padStart(2, "0");
   sec.textContent = String(curSec).padStart(2, "0");
+
+  amount = minutes;
+  ogTime = minutes;
 }
-function tomatosub(){
+function tomatosub() {
   const custom = document.getElementById("custom");
   const time = document.getElementById("input").value;
   var value = parseFloat(time);
   if (isNaN(value) || value < 0 || value > 60) {
     alert("Please enter a valid number of minutes between 0 and 60");
     return;
-  }
-  else{
+  } else {
     addTime(time);
     custom.style.display = "none";
   }
 }
-function start(){
+function start() {
   const min = document.getElementById("min");
   const sec = document.getElementById("sec");
+  var alertSound = document.getElementById("alertSound");
 
-  let total = minutes * 60; //total of seconds
-
+  let total = amount * 60; //total of seconds
+  timeLeft = total;
+  
   clearInterval(count); //empties for next
-  min.textContent = "00";
-  sec.textContent = "00";
+  
+  paused = false;
+  if (!paused) {
+    countdown = setInterval(() => {
+      if (timeLeft <= 0) {
+        alertSound.play();
+        clearInterval(countdown); // Stop the countdown
+        alert("Time's up!");
+        return;
+      }
 
-  countdown = setInterval(() => {
-    //if we are at end of timer
-    if (total <= 0) {
-      clearInterval(countdown);
-      alert("ringring");
-      return;
-    }
+      timeLeft--; //countdown
 
-    total--; //countdown
+      const curMin = Math.floor(timeLeft / 60); //gets the minutes and rounds down
+      const curSec = timeLeft % 60; //gets the seconds without counting hours
 
-    const curMin = Math.floor(total / 60); //gets the minutes and rounds down
-    const curSec = total % 60; //gets the seconds without counting hours
-
-    min.textContent = String(curMin).padStart(2, "0");
-    sec.textContent = String(curSec).padStart(2, "0");
-  }, 1000);
+      min.textContent = String(curMin).padStart(2, "0");
+      sec.textContent = String(curSec).padStart(2, "0");
+    }, 1000);
+  }
 }
 
-function pause(){
-
+function pause() {
+  clearInterval(countdown);
+  paused = true;
+  amount = timeLeft / 60;
 }
-function redo(){
-
+function redo() {
+  clearInterval(countdown);
+  paused = false;
+  addTime(ogTime);
 }
-
-

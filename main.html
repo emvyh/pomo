@@ -57,14 +57,16 @@
     <div class="custom" id="custom">
       <h2>enter the custom amount of minutes!</h2>
       <h3>our timers can only do 60 minutes or less.</h3>
-      <input id="input" type="text" placeholder="enter" class="text">
 
-      <div submitTomato id="tomatosub" onclick="tomatosub()">
+      <div submitTomato id="tomatosub" class="tomatosub" onclick="tomatosub()">
+        <input id="input" type="text" placeholder="enter" class="text">
         <img src="tomatbutton.png" class="tomatbut">
         <h4 class="cap">submit</h4>
       </div>
 
     </div>
+
+    <audio id="alertSound" src="ding-47489.mp3" preload="auto"></audio>
 
     <!--control-->
     <div class="control">

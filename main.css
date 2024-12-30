@@ -60,6 +60,7 @@ body {
   font-size: 30px;
   color: rgb(56, 7, 7);
   margin-top: -60px;
+  margin: 0;
 }
 .poplink:hover {
   opacity: 80%;
@@ -123,18 +124,21 @@ body {
   width: 50px;
   height: 50px;
   cursor: pointer;
-  position: absolute; /* Enables precise placement */
-  top: 65%; /* Center vertically */
-  left: 60%;
+  position: fixed; 
+  top: 290px;
+  left: 55%;
 }
 .cap {
-  position: absolute;
-  top: 75%;
-  left: 59%;
+  position: fixed; 
+  top: 305px;
+  left: 55%;
   color: rgb(65, 23, 23);
   text-align: center;
   font-family: "Sour Gummy", sans-serif;
   cursor: pointer;
+}
+.tomatosub{
+  display: flex;
 }
 /*control center*/
 .control {
