@@ -60,7 +60,8 @@ body {
   font-size: 30px;
   color: rgb(56, 7, 7);
   margin-top: -60px;
-  margin: 0;
+  margin: 0 auto;
+  width: 15%;
 }
 .poplink:hover {
   opacity: 80%;
@@ -81,7 +82,7 @@ body {
 }
 
 /*custom time*/
-.custom {
+.custompop {
   position: absolute;
   left: 23%;
   top: 110px;
@@ -93,24 +94,23 @@ body {
   background-color: mistyrose;
   font-size: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  padding: 35px;
+  padding: 15   px;
   border-radius: 20px;
   z-index: 9;
 }
-.text {
+/*input button*/
+.placeholder { 
   outline: none;
   border: none;
-  width: 100px;
-  padding: 15px 20px;
+  width: 50%;
+  height: 50px;
   border-radius: 20px;
   background-color: rgba(252, 113, 108, 255);
-  color: rgb(56, 7, 7);
   font-size: 20px;
   font-weight: bolder;
-  display: inline;
   z-index: 99;
 }
-.text::placeholder {
+.placeholder::placeholder {
   color: rgb(65, 23, 23);
   text-align: center;
   font-family: "Sour Gummy", sans-serif;
@@ -120,25 +120,28 @@ body {
   text-align: center;
   font-family: "Sour Gummy", sans-serif;
 }
+/*tomato submit*/
 .tomatbut {
   width: 50px;
   height: 50px;
   cursor: pointer;
-  position: fixed; 
-  top: 290px;
-  left: 55%;
 }
-.cap {
-  position: fixed; 
-  top: 305px;
-  left: 55%;
+.caption {
+  margin-top: -15px;
   color: rgb(65, 23, 23);
   text-align: center;
   font-family: "Sour Gummy", sans-serif;
   cursor: pointer;
 }
-.tomatosub{
-  display: flex;
+/*just tomato*/
+.tomatoandcap{
+  display: fixed;
+  align-items: center;
+}
+/*input and submit*/
+.inputandsub{
+  display: inline-flex;
+  gap: 20px;
 }
 /*control center*/
 .control {
